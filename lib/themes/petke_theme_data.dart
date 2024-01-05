@@ -107,14 +107,14 @@ class PetkeThemeData {
 
   static final TextTheme _textTheme = TextTheme(
     headlineMedium: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 20.0),
-    bodySmall: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 20.0),
-    headlineSmall: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 20.0),
-    titleMedium: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 20.0),
-    labelSmall: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 20.0),
-    bodyLarge: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 20.0),
-    titleSmall: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 20.0),
-    bodyMedium: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 20.0),
-    titleLarge: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 20.0),
-    labelLarge: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 20.0),
+    bodySmall: GoogleFonts.notoSans(fontWeight: _semiBold, fontSize: 16.0),
+    headlineSmall: GoogleFonts.notoSans(fontWeight: _medium, fontSize: 16.0),
+    titleMedium: GoogleFonts.notoSans(fontWeight: _medium, fontSize: 16.0),
+    labelSmall: GoogleFonts.notoSans(fontWeight: _medium, fontSize: 12.0),
+    bodyLarge: GoogleFonts.notoSans(fontWeight: _regular, fontSize: 14.0),
+    titleSmall: GoogleFonts.notoSans(fontWeight: _medium, fontSize: 14.0),
+    bodyMedium: GoogleFonts.notoSans(fontWeight: _regular, fontSize: 16.0),
+    titleLarge: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 16.0),
+    labelLarge: GoogleFonts.notoSans(fontWeight: _semiBold, fontSize: 14.0),
   );
 }
