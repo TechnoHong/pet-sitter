@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       darkTheme: PetkeThemeData.darkThemeData,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }

@@ -1,1 +1,0 @@
-const Duration splashPageAnimationDuration = Duration(milliseconds: 300);
