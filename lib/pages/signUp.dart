@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../layout/petkeAppBar.dart';
+
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
 
@@ -9,8 +11,12 @@ class SignUpPage extends StatelessWidget {
     final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
+      appBar: PetKeAppBar(
+        title: localizations.sign_up_title,
+        hasBack: true,
+      ),
       body: Center(
-        child: Text(localizations.app_title + ' 로그인'),
+        child: Text(localizations.app_title),
       ),
     );
   }

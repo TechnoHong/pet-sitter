@@ -1,5 +1,7 @@
 {
   "@@locale": "ko",
 
-  "app_title": "펫케"
+  "app_title": "펫케",
+  "sign_in_title": "로그인",
+  "sign_up_title": "회원 가입"
 }

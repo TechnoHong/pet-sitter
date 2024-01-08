@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+import 'package:petke/layout/petkeAppBar.dart';
 
 import '../layout/adaptive.dart';
-
-class ToggleSplashNotification extends Notification {}
+import '../routes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,8 +15,24 @@ class HomePage extends StatelessWidget {
     final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
+      appBar: PetKeAppBar(title: localizations.app_title,),
       body: Center(
-        child: Text(localizations.app_title + ' 메인'),
+        child: Column(
+          children: [
+            TextButton(
+              onPressed: () {
+                Get.toNamed(Routes.signInScreen);
+                },
+              child: Text(localizations.sign_in_title),
+            ),
+            TextButton(
+              onPressed: () {
+                Get.toNamed(Routes.signUpScreen);
+              },
+              child: Text(localizations.sign_up_title),
+            ),
+          ],
+        ),
       ),
     );
   }
