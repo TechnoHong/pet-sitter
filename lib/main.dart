@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+import 'package:petke/routes.dart';
 import 'package:petke/themes/petke_theme_data.dart';
 
 void main() {
@@ -12,13 +14,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'PETKE',
       theme: PetkeThemeData.lightThemeData,
       darkTheme: PetkeThemeData.darkThemeData,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const MyHomePage(),
+      initialRoute: Routes.mainScreen,
+      getPages: getPages,
     );
   }
 }
