@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pet_sitter/layout/adaptive.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../layout/adaptive.dart';
 
 class ToggleSplashNotification extends Notification {}
 

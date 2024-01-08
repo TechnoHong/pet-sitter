@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:pet_sitter/themes/petke_theme_data.dart';
+import 'package:petke/themes/petke_theme_data.dart';
 
 void main() {
   runApp(const MyApp());
