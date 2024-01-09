@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PetKeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const PetKeAppBar({Key? key, required this.title, this.hasBack = false}) : super(key: key);
+class PetkeAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const PetkeAppBar({Key? key, required this.title, this.hasBack = false}) : super(key: key);
 
   final String title;
   final bool hasBack;

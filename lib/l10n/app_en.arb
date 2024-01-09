@@ -3,5 +3,7 @@
 
   "app_title": "Petke",
   "sign_in_title": "Sign In",
-  "sign_up_title": "Sign Up"
+  "sign_up_title": "Sign Up",
+  "settings_title": "Settings",
+  "settings_theme_title": "Theme Mode"
 }

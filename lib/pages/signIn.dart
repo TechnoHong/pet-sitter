@@ -11,7 +11,7 @@ class SignInPage extends StatelessWidget {
     final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: PetKeAppBar(
+      appBar: PetkeAppBar(
         title: localizations.sign_in_title,
         hasBack: true,
       ),

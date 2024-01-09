@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
     final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: PetKeAppBar(title: localizations.app_title,),
+      appBar: PetkeAppBar(title: localizations.app_title,),
       body: Center(
         child: Column(
           children: [
@@ -30,6 +30,12 @@ class HomePage extends StatelessWidget {
                 Get.toNamed(Routes.signUpScreen);
               },
               child: Text(localizations.sign_up_title),
+            ),
+            TextButton(
+                onPressed: () {
+                  Get.toNamed(Routes.settingsScreen);
+                },
+                child: Text(localizations.settings_title),
             ),
           ],
         ),

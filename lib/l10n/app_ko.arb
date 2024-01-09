@@ -3,5 +3,7 @@
 
   "app_title": "펫케",
   "sign_in_title": "로그인",
-  "sign_up_title": "회원 가입"
+  "sign_up_title": "회원 가입",
+  "settings_title": "환경 설정",
+  "settings_theme_title": "테마 설정"
 }
