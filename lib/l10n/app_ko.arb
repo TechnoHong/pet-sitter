@@ -1,9 +1,17 @@
 {
   "@@locale": "ko",
 
-  "app_title": "펫케",
+  "app_title": "Petke",
   "sign_in_title": "로그인",
-  "sign_up_title": "회원 가입",
+  "sign_out_title": "로그아웃",
+  "sign_up_title": "회원가입",
+  "sign_up_with_email": "이메일로 회원가입하기",
   "settings_title": "환경 설정",
-  "settings_theme_title": "테마 설정"
+  "settings_theme_title": "테마 설정",
+  "settings_theme_light": "라이트",
+  "settings_theme_dark": "다크",
+  "settings_theme_system": "시스템",
+
+  "email": "Email",
+  "password": "Password"
 }

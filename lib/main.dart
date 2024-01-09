@@ -1,12 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:petke/constants.dart';
 import 'package:petke/data/petke_options.dart';
+import 'package:petke/firebase_options.dart';
+import 'package:petke/repositories/auth_repository.dart';
 import 'package:petke/routes.dart';
 import 'package:petke/themes/petke_theme_data.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform).then((value) => Get.put(AuthRepository()));
   runApp(const MyApp());
 }
 

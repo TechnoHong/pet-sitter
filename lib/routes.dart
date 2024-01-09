@@ -14,11 +14,11 @@ class Routes {
 final getPages = [
   GetPage(
       name: Routes.signInScreen,
-      page: () => const SignUpPage(),
+      page: () => const SignInPage(),
   ),
   GetPage(
       name: Routes.signUpScreen,
-      page: () => const SignInPage(),
+      page: () => const SignUpPage(),
   ),
   GetPage(
       name: Routes.mainScreen,

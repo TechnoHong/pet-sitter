@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:petke/layout/petkeAppBar.dart';
+import 'package:petke/repositories/auth_repository.dart';
 
-import '../layout/adaptive.dart';
 import '../routes.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDesktop = isDisplayDesktop(context);
     final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
@@ -20,22 +19,16 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             TextButton(
-              onPressed: () {
-                Get.toNamed(Routes.signInScreen);
-                },
-              child: Text(localizations.sign_in_title),
-            ),
-            TextButton(
-              onPressed: () {
-                Get.toNamed(Routes.signUpScreen);
-              },
-              child: Text(localizations.sign_up_title),
-            ),
-            TextButton(
                 onPressed: () {
                   Get.toNamed(Routes.settingsScreen);
                 },
                 child: Text(localizations.settings_title),
+            ),
+            TextButton(
+              onPressed: () {
+                AuthRepository.instance.signOut();
+              },
+              child: Text(localizations.sign_out_title),
             ),
           ],
         ),

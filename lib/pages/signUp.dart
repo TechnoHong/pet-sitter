@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+import 'package:petke/controllers/sign_up_controller.dart';
 
 import '../layout/petkeAppBar.dart';
 
@@ -9,6 +11,7 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
+    final controller = Get.put(SignUpController());
 
     return Scaffold(
       appBar: PetkeAppBar(
@@ -16,7 +19,27 @@ class SignUpPage extends StatelessWidget {
         hasBack: true,
       ),
       body: Center(
-        child: Text(localizations.app_title),
+        child: Column(
+          children: [
+            TextField(
+              controller: controller.email,
+              decoration: InputDecoration(
+                hintText: localizations.email,
+              ),
+            ),
+            TextField(
+              controller: controller.password,
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: localizations.password,
+              ),
+            ),
+            FilledButton(
+              onPressed: () {
+                SignUpController.instance.signUp(controller.email.text.trim(), controller.password.text.trim());
+              }, child: Text(localizations.sign_up_title)),
+          ],
+        ),
       ),
     );
   }

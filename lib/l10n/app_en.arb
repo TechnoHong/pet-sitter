@@ -3,7 +3,15 @@
 
   "app_title": "Petke",
   "sign_in_title": "Sign In",
+  "sign_out_title": "Sign Out",
   "sign_up_title": "Sign Up",
+  "sign_up_with_email": "Sign up with Email",
   "settings_title": "Settings",
-  "settings_theme_title": "Theme Mode"
+  "settings_theme_title": "Theme Mode",
+  "settings_theme_light": "Light",
+  "settings_theme_dark": "Dark",
+  "settings_theme_system": "System",
+
+  "email": "Email",
+  "password": "Password"
 }

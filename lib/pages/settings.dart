@@ -22,21 +22,21 @@ class SettingsPage extends StatelessWidget {
           children: [
             Text(localizations.settings_theme_title),
             SingleSelector<ThemeMode>(
-              options: const <ButtonSegment<ThemeMode>>[
+              options: <ButtonSegment<ThemeMode>>[
                 ButtonSegment<ThemeMode>(
                   value: ThemeMode.light,
-                  label: Text("light"),
-                  icon: Icon(Icons.brightness_7),
+                  label: Text(localizations.settings_theme_light),
+                  icon: const Icon(Icons.brightness_7),
                 ),
                 ButtonSegment<ThemeMode>(
                   value: ThemeMode.dark,
-                  label: Text("dark"),
-                  icon: Icon(Icons.brightness_2),
+                  label: Text(localizations.settings_theme_dark),
+                  icon: const Icon(Icons.brightness_2),
                 ),
                 ButtonSegment<ThemeMode>(
                   value: ThemeMode.system,
-                  label: Text("system"),
-                  icon: Icon(Icons.brightness_auto),
+                  label: Text(localizations.settings_theme_system),
+                  icon: const Icon(Icons.brightness_auto),
                 ),
               ],
               selectedOption: options.themeMode,
