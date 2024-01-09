@@ -19,6 +19,13 @@ class PetkeThemeData {
         backgroundColor: colorScheme.background,
         elevation: 0,
         iconTheme: IconThemeData(color: colorScheme.primary),
+        titleTextStyle: TextStyle(
+          color: colorScheme.onBackground,
+          fontWeight: FontWeight.w700,
+          fontFamily: 'NotoSans',
+          fontSize: 16.0,
+          textBaseline: TextBaseline.ideographic,
+        ),
       ),
       iconTheme: IconThemeData(color: colorScheme.onPrimary),
       canvasColor: colorScheme.background,
