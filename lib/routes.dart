@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:petke/pages/home.dart';
+import 'package:petke/pages/myPage.dart';
 import 'package:petke/pages/settings.dart';
 import 'package:petke/pages/signIn.dart';
 import 'package:petke/pages/signUp.dart';
@@ -9,6 +10,7 @@ class Routes {
   static String signUpScreen = '/sign-up';
   static String mainScreen = '/main';
   static String settingsScreen = '/settings';
+  static String myPageScreen = '/mypage';
 }
 
 final getPages = [
@@ -28,4 +30,8 @@ final getPages = [
     name: Routes.settingsScreen,
     page: () => const SettingsPage(),
   ),
+  GetPage(
+    name: Routes.myPageScreen,
+    page: () => const MyPage(),
+  )
 ];

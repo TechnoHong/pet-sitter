@@ -11,7 +11,6 @@ import 'package:petke/themes/petke_theme_data.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform).then((value) => Get.put(AuthRepository()));
   runApp(const MyApp());
 }

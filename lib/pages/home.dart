@@ -19,10 +19,16 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             TextButton(
-                onPressed: () {
-                  Get.toNamed(Routes.settingsScreen);
-                },
-                child: Text(localizations.settings_title),
+              onPressed: () {
+                Get.toNamed(Routes.settingsScreen);
+              },
+              child: Text(localizations.settings_title),
+            ),
+            TextButton(
+              onPressed: () {
+                Get.toNamed(Routes.myPageScreen);
+              },
+              child: Text(localizations.my_page_title),
             ),
             TextButton(
               onPressed: () {
