@@ -12,7 +12,20 @@
           "package_name": "com.tcnk.pet_sitter"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "796432377158-e01jb3naao4mqahlnb3smdjd7vnghfvl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tcnk.pet_sitter",
+            "certificate_hash": "65031b4c44a485238a1a5a35071126117300c894"
+          }
+        },
+        {
+          "client_id": "796432377158-4lpr5rfdpn0tuqqiot8ekd97p7sniiur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDnFPAN-xqJMd9F8lomSYe5ClszHsZVrCE"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796432377158-4lpr5rfdpn0tuqqiot8ekd97p7sniiur.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "796432377158-ctl4o10l34ubhoj5q53lpe1sppn7hfih.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tcnk.petSitter"
+              }
+            }
+          ]
         }
       }
     }
