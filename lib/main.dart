@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             darkTheme: PetkeThemeData.darkThemeData,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            initialRoute: Routes.mainScreen,
+            initialRoute: Routes.initial,
             getPages: getPages,
           );
         },

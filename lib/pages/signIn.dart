@@ -37,7 +37,7 @@ class SignInPage extends StatelessWidget {
             ),
             FilledButton(
               onPressed: () {
-                controller.signIn();
+                SignInController.instance.signIn();
               },
               child: Text(localizations.sign_in_title),
             ),
@@ -46,6 +46,12 @@ class SignInPage extends StatelessWidget {
                 Get.toNamed(Routes.signUpScreen);
               },
               child: Text(localizations.sign_up_with_email),
+            ),
+            FilledButton(
+              onPressed: () {
+                SignInController.instance.signInWithGoogle();
+              },
+              child: const Text("Login with google"),
             ),
           ],
         ),

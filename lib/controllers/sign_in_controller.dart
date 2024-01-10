@@ -20,4 +20,17 @@ class SignInController extends GetxController {
       );
     }
   }
+
+  Future<void> signInWithGoogle() async {
+    String? error = await AuthRepository
+        .instance
+        .signInWithGoogle();
+    if (error != null) {
+      Get.showSnackbar(
+          GetSnackBar(
+            message: error.toString(),
+          )
+      );
+    }
+  }
 }

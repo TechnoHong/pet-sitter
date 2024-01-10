@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:petke/pages/home.dart';
+import 'package:petke/pages/initialProgress.dart';
 import 'package:petke/pages/myPage.dart';
 import 'package:petke/pages/settings.dart';
 import 'package:petke/pages/signIn.dart';
@@ -11,6 +12,7 @@ class Routes {
   static String mainScreen = '/main';
   static String settingsScreen = '/settings';
   static String myPageScreen = '/mypage';
+  static String initial = '/init';
 }
 
 final getPages = [
@@ -33,5 +35,9 @@ final getPages = [
   GetPage(
     name: Routes.myPageScreen,
     page: () => const MyPage(),
-  )
+  ),
+  GetPage(
+    name: Routes.initial,
+    page: () => const InitialProgress(),
+  ),
 ];
