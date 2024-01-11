@@ -70,6 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '796432377158',
     projectId: 'tcnk-2024',
     storageBucket: 'tcnk-2024.appspot.com',
+    androidClientId: '796432377158-e01jb3naao4mqahlnb3smdjd7vnghfvl.apps.googleusercontent.com',
+    iosClientId: '796432377158-ctl4o10l34ubhoj5q53lpe1sppn7hfih.apps.googleusercontent.com',
     iosBundleId: 'com.tcnk.petSitter',
   );
 }
