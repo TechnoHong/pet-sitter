@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
+import 'package:petke/controllers/nav_bar_controller.dart';
 import 'package:petke/layout/petkeAppBar.dart';
+import 'package:petke/layout/petkeNavBar.dart';
 import 'package:petke/repositories/auth_repository.dart';
 
 import '../routes.dart';
@@ -12,6 +14,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
+    Get.put(NavBarController());
 
     return Scaffold(
       appBar: PetkeAppBar(title: localizations.app_title,),
@@ -39,6 +42,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const PetkeNavBar(),
     );
   }
 }
