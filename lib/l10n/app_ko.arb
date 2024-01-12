@@ -14,5 +14,11 @@
   "my_page_title": "내 정보",
 
   "email": "Email",
-  "password": "Password"
+  "password": "Password",
+
+  "navi_menu": "MENU",
+  "navi_favorites": "FAVORITES",
+  "navi_home": "HOME",
+  "navi_chat": "CHAT",
+  "navi_my": "MY"
 }

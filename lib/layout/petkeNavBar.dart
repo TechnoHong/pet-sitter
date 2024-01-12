@@ -1,35 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:petke/controllers/nav_bar_controller.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PetkeNavBar extends GetView<NavBarController> {
   const PetkeNavBar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return Obx(() => BottomNavigationBar(
       currentIndex: controller.selectedIndex.value,
       onTap: controller.changeIndex,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: controller.selectedIndex.value == 0 ? const Icon(Icons.man) : const Icon(Icons.woman),
-          label: 'tab0',
+          icon: const Icon(Icons.menu),
+          label: localizations.navi_menu,
         ),
         BottomNavigationBarItem(
-          icon: controller.selectedIndex.value == 1 ? const Icon(Icons.man) : const Icon(Icons.woman),
-          label: 'tab1',
+          icon: const Icon(Icons.favorite),
+          label: localizations.navi_favorites,
         ),
         BottomNavigationBarItem(
-          icon: controller.selectedIndex.value == 2 ? const Icon(Icons.man) : const Icon(Icons.woman),
-          label: 'tab2',
+          icon: const Icon(Icons.home),
+          label: localizations.navi_home,
         ),
         BottomNavigationBarItem(
-          icon: controller.selectedIndex.value == 3 ? const Icon(Icons.man) : const Icon(Icons.woman),
-          label: 'tab3',
+          icon: const Icon(Icons.chat),
+          label: localizations.navi_chat,
         ),
         BottomNavigationBarItem(
-          icon: controller.selectedIndex.value == 4 ? const Icon(Icons.man) : const Icon(Icons.woman),
-          label: 'tab4',
+          icon: const Icon(Icons.account_circle),
+          label: localizations.navi_my,
         ),
       ],
     ));

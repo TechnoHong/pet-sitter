@@ -44,6 +44,8 @@ class PetkeThemeData {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: true,
         showUnselectedLabels: false,
+        selectedLabelStyle: _textTheme.labelSmall,
+        elevation: 10,
       )
     );
   }
@@ -126,7 +128,7 @@ class PetkeThemeData {
     bodySmall: GoogleFonts.notoSans(fontWeight: _semiBold, fontSize: 16.0),
     headlineSmall: GoogleFonts.notoSans(fontWeight: _medium, fontSize: 16.0),
     titleMedium: GoogleFonts.notoSans(fontWeight: _medium, fontSize: 16.0),
-    labelSmall: GoogleFonts.notoSans(fontWeight: _medium, fontSize: 12.0),
+    labelSmall: GoogleFonts.notoSans(fontWeight: _bold, fontSize: 12.0),
     bodyLarge: GoogleFonts.notoSans(fontWeight: _regular, fontSize: 14.0),
     titleSmall: GoogleFonts.notoSans(fontWeight: _medium, fontSize: 14.0),
     bodyMedium: GoogleFonts.notoSans(fontWeight: _regular, fontSize: 16.0),
