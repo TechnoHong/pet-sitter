@@ -15,8 +15,8 @@ class PetkeNavBar extends GetView<NavBarController> {
       onTap: controller.changeIndex,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: const Icon(Icons.menu),
-          label: localizations.navi_menu,
+          icon: const Icon(Icons.note_add),
+          label: localizations.navi_writing,
         ),
         BottomNavigationBarItem(
           icon: const Icon(Icons.favorite),
