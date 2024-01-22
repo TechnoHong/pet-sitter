@@ -6,6 +6,7 @@
   "sign_out_title": "로그아웃",
   "sign_up_title": "회원가입",
   "sign_up_with_email": "이메일로 회원가입하기",
+  "sign_up_with_google": "Google 계정으로 로그인",
   "settings_title": "환경 설정",
   "settings_theme_title": "테마 설정",
   "settings_theme_light": "라이트",
