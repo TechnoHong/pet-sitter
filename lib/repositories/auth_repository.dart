@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:petke/repositories/exceptions/auth_exceptions.dart';
 
 import '../routes.dart';
 
@@ -36,7 +37,8 @@ class AuthRepository extends GetxController {
         Get.offAllNamed(Routes.signInScreen);
       }
     } on FirebaseAuthException catch (e) {
-      return e.toString();
+      final ex = SignInWithEmailAndPasswordFailure.code(e.code);
+      return ex.message;
     }
     return null;
   }
@@ -45,7 +47,8 @@ class AuthRepository extends GetxController {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      return e.toString();
+      final ex = SignInWithEmailAndPasswordFailure.code(e.code);
+      return ex.message;
     }
     return null;
   }
@@ -62,7 +65,8 @@ class AuthRepository extends GetxController {
     try {
       await _auth.signInWithCredential(credential);
     } on FirebaseAuthException catch (e) {
-      return e.toString();
+      final ex = SignInWithCredential.code(e.code);
+      return ex.message;
     }
 
     return null;

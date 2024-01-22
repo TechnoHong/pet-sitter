@@ -13,6 +13,7 @@ class SignUpController extends GetxController {
     if (error != null) {
       Get.showSnackbar(
         GetSnackBar(
+          duration: const Duration(seconds: 3),
           message: error.toString(),
         )
       );
