@@ -7,9 +7,10 @@ class SignUpController extends GetxController {
 
   final email = TextEditingController();
   final password = TextEditingController();
+  final alias = TextEditingController();
 
-  void signUp(String email, String password) async {
-    String? error = await AuthRepository.instance.createUserWithEmailAndPassword(email, password);
+  void signUp(String email, String password, String alias) async {
+    String? error = await AuthRepository.instance.createUserWithEmailAndPassword(email, password, alias);
     if (error != null) {
       Get.showSnackbar(
         GetSnackBar(

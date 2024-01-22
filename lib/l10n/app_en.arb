@@ -16,6 +16,11 @@
 
   "email": "Email",
   "password": "Password",
+  "check_duplicate": "Check",
+  "email_hint": "Email",
+  "password_hint": "Password",
+  "password_check": "Check Password",
+  "alias": "Alias",
 
   "navi_menu": "MENU",
   "navi_favorites": "FAVORITES",

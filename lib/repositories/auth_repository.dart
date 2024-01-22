@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:petke/repositories/exceptions/auth_exceptions.dart';
@@ -10,6 +11,8 @@ class AuthRepository extends GetxController {
 
   final _auth = FirebaseAuth.instance;
   late final Rx<User?> firebaseUser;
+
+  final DatabaseReference ref = FirebaseDatabase.instance.ref('users');
 
   @override
   void onReady() {
@@ -28,16 +31,23 @@ class AuthRepository extends GetxController {
     }
   }
 
-  Future<String?> createUserWithEmailAndPassword(String email, String password) async {
+  Future<String?> createUserWithEmailAndPassword(String email, String password, String alias) async {
     try {
       await _auth.createUserWithEmailAndPassword(email: email, password: password);
-      if(firebaseUser.value != null) {
+      final fbUser = firebaseUser.value;
+      if(fbUser != null) {
+        await ref.child(fbUser.uid).set({
+          'uid': fbUser.uid,
+          'email': fbUser.email,
+          'alias': alias,
+        });
+
         Get.offAllNamed(Routes.mainScreen);
       } else {
         Get.offAllNamed(Routes.signInScreen);
       }
     } on FirebaseAuthException catch (e) {
-      final ex = SignInWithEmailAndPasswordFailure.code(e.code);
+      final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
       return ex.message;
     }
     return null;
@@ -63,7 +73,13 @@ class AuthRepository extends GetxController {
     );
 
     try {
-      await _auth.signInWithCredential(credential);
+      final signInCredential = await _auth.signInWithCredential(credential);
+      final fbUser = signInCredential.user!;
+      await ref.child(fbUser.uid).set({
+        'uid': fbUser.uid,
+        'email': fbUser.email,
+        'alias': fbUser.displayName,
+      });
     } on FirebaseAuthException catch (e) {
       final ex = SignInWithCredential.code(e.code);
       return ex.message;

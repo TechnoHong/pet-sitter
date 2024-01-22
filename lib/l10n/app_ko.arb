@@ -16,6 +16,11 @@
 
   "email": "Email",
   "password": "Password",
+  "check_duplicate": "중복 확인",
+  "email_hint": "이메일",
+  "password_hint": "비밀 번호",
+  "password_check": "비밀 번호 확인",
+  "alias": "이름",
 
   "navi_menu": "메뉴",
   "navi_favorites": "찜",

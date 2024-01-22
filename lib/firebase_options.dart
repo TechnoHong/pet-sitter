@@ -52,6 +52,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '796432377158',
     projectId: 'tcnk-2024',
     authDomain: 'tcnk-2024.firebaseapp.com',
+    databaseURL: 'https://tcnk-2024-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'tcnk-2024.appspot.com',
     measurementId: 'G-T7Z6WKQTFK',
   );
@@ -61,6 +62,7 @@ class DefaultFirebaseOptions {
     appId: '1:796432377158:android:132265d7e9263009787147',
     messagingSenderId: '796432377158',
     projectId: 'tcnk-2024',
+    databaseURL: 'https://tcnk-2024-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'tcnk-2024.appspot.com',
   );
 
@@ -69,6 +71,7 @@ class DefaultFirebaseOptions {
     appId: '1:796432377158:ios:fa90c98dd4383da6787147',
     messagingSenderId: '796432377158',
     projectId: 'tcnk-2024',
+    databaseURL: 'https://tcnk-2024-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'tcnk-2024.appspot.com',
     androidClientId: '796432377158-e01jb3naao4mqahlnb3smdjd7vnghfvl.apps.googleusercontent.com',
     iosClientId: '796432377158-ctl4o10l34ubhoj5q53lpe1sppn7hfih.apps.googleusercontent.com',
