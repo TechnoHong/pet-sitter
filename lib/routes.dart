@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:petke/pages/home.dart';
 import 'package:petke/pages/initialProgress.dart';
 import 'package:petke/pages/myPage.dart';
+import 'package:petke/pages/rootScaffold.dart';
 import 'package:petke/pages/settings.dart';
 import 'package:petke/pages/signIn.dart';
 import 'package:petke/pages/signUp.dart';
@@ -26,7 +26,7 @@ final getPages = [
   ),
   GetPage(
       name: Routes.mainScreen,
-      page: () => const HomePage(),
+      page: () => const RootScaffold(),
   ),
   GetPage(
     name: Routes.settingsScreen,

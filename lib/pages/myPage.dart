@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:petke/layout/petkeAppBar.dart';
 import 'package:petke/repositories/auth_repository.dart';
 
 class MyPage extends StatelessWidget {
@@ -12,26 +11,23 @@ class MyPage extends StatelessWidget {
     final localizations = AppLocalizations.of(context)!;
     final User? user = AuthRepository.instance.firebaseUser.value;
 
-    return Scaffold(
-      appBar: PetkeAppBar(title: localizations.my_page_title, hasBack: true),
-      body: Center(
-        child: (() {
-          if (user == null) {
-            return const Text("User information is missing");
-          } else {
-            return Column(
-              children: [
-                UserInfoItem(name: 'uid', content: AuthRepository.instance.firebaseUser.value?.uid ?? 'null'),
-                UserInfoItem(name: 'isEmailVerified', content: user.emailVerified.toString()),
-                UserInfoItem(name: 'isAnonymousAccount', content: user.isAnonymous.toString()),
-                UserInfoItem(name: 'Email', content: user.email ?? '-'),
-                UserInfoItem(name: 'PhoneNum', content: user.phoneNumber ?? '-'),
-                UserInfoItem(name: 'DisplayName', content: user.displayName ?? '-'),
-              ],
-            );
-          }
-        })()
-      ),
+    return Center(
+      child: (() {
+        if (user == null) {
+          return const Text("User information is missing");
+        } else {
+          return Column(
+            children: [
+              UserInfoItem(name: 'uid', content: AuthRepository.instance.firebaseUser.value?.uid ?? 'null'),
+              UserInfoItem(name: 'isEmailVerified', content: user.emailVerified.toString()),
+              UserInfoItem(name: 'isAnonymousAccount', content: user.isAnonymous.toString()),
+              UserInfoItem(name: 'Email', content: user.email ?? '-'),
+              UserInfoItem(name: 'PhoneNum', content: user.phoneNumber ?? '-'),
+              UserInfoItem(name: 'DisplayName', content: user.displayName ?? '-'),
+            ],
+          );
+        }
+      })()
     );
   }
 }
