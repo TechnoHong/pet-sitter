@@ -23,12 +23,21 @@ class AuthRepository extends GetxController {
     });
   }
 
-  _setInitialPage(User? user) {
+  _setInitialPage(User? user) async {
     if (user == null) {
       Get.offAllNamed(Routes.signInScreen);
     } else {
-      Get.offAllNamed(Routes.mainScreen);
+      if (await checkAdditionalUserInfo(user.uid)) {
+        Get.offAllNamed(Routes.mainScreen);
+      } else {
+        Get.toNamed(Routes.additionalInfoScreen);
+      }
     }
+  }
+
+  Future<bool> checkAdditionalUserInfo(String uid) async {
+    DataSnapshot snapshot = (await ref.child('uid').child('Extra_flag').once()).snapshot;
+    return snapshot.value != null;
   }
 
   Future<String?> createUserWithEmailAndPassword(String email, String password, String alias) async {
@@ -41,10 +50,6 @@ class AuthRepository extends GetxController {
           'email': fbUser.email,
           'alias': alias,
         });
-
-        Get.offAllNamed(Routes.mainScreen);
-      } else {
-        Get.offAllNamed(Routes.signInScreen);
       }
     } on FirebaseAuthException catch (e) {
       final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
