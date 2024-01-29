@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
+import 'package:petke/pages/AdditionalInfo/AdditionalInfo.dart';
 import 'package:petke/pages/initialProgress.dart';
 import 'package:petke/pages/myPage.dart';
 import 'package:petke/pages/rootScaffold.dart';
 import 'package:petke/pages/settings.dart';
 import 'package:petke/pages/signIn.dart';
 import 'package:petke/pages/signUp.dart';
-import 'package:petke/pages/signUpAdditional.dart';
 
 class Routes {
   static String signInScreen = '/sign-in';
@@ -44,6 +44,6 @@ final getPages = [
   ),
   GetPage(
     name: Routes.additionalInfoScreen,
-    page: () => const SignUpAdditional(),
+    page: () => const AdditionalInfo(),
   )
 ];
