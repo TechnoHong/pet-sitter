@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:petke/controllers/additional_info_controller.dart';
 import 'package:petke/layout/petkeAppBar.dart';
 import 'package:petke/pages/AdditionalInfo/EditPetsList.dart';
 import 'package:petke/pages/AdditionalInfo/EditProfileImage.dart';
 import 'package:petke/pages/AdditionalInfo/EditUserLocation.dart';
+import 'package:petke/themes/petke_theme_data.dart';
 
 class AdditionalInfo extends StatelessWidget {
   const AdditionalInfo({super.key});
@@ -31,6 +33,16 @@ class AdditionalInfo extends StatelessWidget {
               ),
               body: Column(
                 children: [
+                  LinearPercentIndicator(
+                    animation: true,
+                    animateFromLastPercent: true,
+                    animationDuration: 150,
+                    percent:  (controller.pageIndex.value + 1) / pages.length,
+                    progressColor: context.theme.colorScheme.secondary,
+                    backgroundColor: context.theme.colorScheme.onSecondary,
+                    padding: const EdgeInsets.all(0),
+                    lineHeight: 2,
+                  ),
                   Expanded(
                     child: SingleChildScrollView(
                       child: pages[controller.pageIndex.value],
