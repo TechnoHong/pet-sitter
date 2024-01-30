@@ -27,5 +27,11 @@
   "navi_home": "HOME",
   "navi_chat": "CHAT",
   "navi_my": "MY",
-  "navi_writing": "New Posting"
+  "navi_writing": "New Posting",
+
+  "additional_info_title": "Additional Info",
+  "additional_later": "Do it later..",
+  "additional_prev": "Prev",
+  "additional_next": "Next",
+  "additional_done": "Done"
 }

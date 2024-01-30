@@ -26,7 +26,7 @@ class AdditionalInfo extends StatelessWidget {
       child: Obx(
           () => Scaffold(
               appBar: PetkeAppBar(
-                title: '추가 정보',
+                title: localizations.additional_info_title,
                 hasBack: true,
               ),
               body: Column(
@@ -45,24 +45,24 @@ class AdditionalInfo extends StatelessWidget {
                             onPressed: () {
                               // todo
                             },
-                            child: Text('나중에 하기')
+                            child: Text(localizations.additional_later)
                         ) : TextButton(
                             onPressed: () {
                               controller.changePageIndex(controller.pageIndex.value - 1);
                             },
-                            child: Text('이전')
+                            child: Text(localizations.additional_prev)
                         ),
                         const SizedBox(width: 16.0,),
                         (controller.pageIndex.value == pages.length - 1) ? FilledButton(
                           onPressed: () {
 
                           },
-                          child: Text('완료')
+                          child: Text(localizations.additional_done)
                         ) : FilledButton(
                           onPressed: () {
                             controller.changePageIndex(controller.pageIndex.value + 1);
                           },
-                          child: Text('다음')
+                          child: Text(localizations.additional_next)
                         ),
                       ],
                     ),
