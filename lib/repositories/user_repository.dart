@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:petke/repositories/auth_repository.dart';
 
 import '../models/PKUser.dart';
+import '../routes.dart';
 
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
@@ -12,11 +13,6 @@ class UserRepository extends GetxController {
 
   Rx<String> uid = "".obs;
   PKUser? userProfile;
-
-  @override
-  void onReady() {
-
-  }
 
   Future<String?> setUid(String uid) async {
     userProfile = await findUserByUid(uid);
@@ -57,8 +53,7 @@ class UserRepository extends GetxController {
       onError: (e) {
             print("Error getting User document: $e");
             return true;
-      }
-    );
+      });
     return flag;
   }
 
@@ -75,5 +70,8 @@ class UserRepository extends GetxController {
     await db.doc(uid).update({
       'extra_flag': flag,
     });
+    Get.offAllNamed(Routes.mainScreen);
   }
 }
+
+// todo 회원가입 시 Error: Expected a value of type 'Map<String, dynamic>', but got one of type 'Null' 에러

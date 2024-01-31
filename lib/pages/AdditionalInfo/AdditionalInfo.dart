@@ -7,6 +7,7 @@ import 'package:petke/layout/petkeAppBar.dart';
 import 'package:petke/pages/AdditionalInfo/EditPetsList.dart';
 import 'package:petke/pages/AdditionalInfo/EditProfileImage.dart';
 import 'package:petke/pages/AdditionalInfo/EditUserLocation.dart';
+import 'package:petke/repositories/user_repository.dart';
 
 import '../../controllers/image_picker_controller.dart';
 
@@ -25,6 +26,7 @@ class AdditionalInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
     final controller = Get.put(AdditionalInfoController());
+    final userRepository = UserRepository.instance;
 
     return WillPopScope(
       onWillPop: controller.onWillPop,
@@ -58,7 +60,7 @@ class AdditionalInfo extends StatelessWidget {
                       children: [
                         (controller.pageIndex.value == 0) ? TextButton(
                             onPressed: () {
-                              // todo
+                              userRepository.updateExtraFlag(userRepository.uid.value, true);
                             },
                             child: Text(localizations.additional_later)
                         ) : TextButton(

@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:petke/controllers/nav_bar_controller.dart';
 import 'package:petke/repositories/auth_repository.dart';
+import 'package:petke/repositories/user_repository.dart';
 
 import '../routes.dart';
 
@@ -27,7 +28,7 @@ class HomePage extends StatelessWidget {
             onPressed: () {
               AuthRepository.instance.signOut();
             },
-            child: Text(localizations.sign_out_title),
+            child: Text(UserRepository.instance.userProfile?.extraFlag.toString() ?? 'null'),
           ),
         ],
       ),
