@@ -27,5 +27,11 @@
   "navi_home": "홈",
   "navi_chat": "채팅",
   "navi_my": "내 정보",
-  "navi_writing": "공고 작성"
+  "navi_writing": "공고 작성",
+
+  "additional_info_title": "추가 정보",
+  "additional_later": "나중에 하기",
+  "additional_prev": "이전",
+  "additional_next": "다음",
+  "additional_done": "완료"
 }

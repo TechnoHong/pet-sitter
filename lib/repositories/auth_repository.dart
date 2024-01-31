@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:petke/repositories/exceptions/auth_exceptions.dart';
+import 'package:petke/repositories/user_repository.dart';
 
 import '../routes.dart';
 
@@ -12,7 +12,7 @@ class AuthRepository extends GetxController {
   final _auth = FirebaseAuth.instance;
   late final Rx<User?> firebaseUser;
 
-  final DatabaseReference ref = FirebaseDatabase.instance.ref('users');
+  late final userRepository = UserRepository.instance;
 
   @override
   void onReady() {
@@ -23,11 +23,16 @@ class AuthRepository extends GetxController {
     });
   }
 
-  _setInitialPage(User? user) {
+  _setInitialPage(User? user) async {
     if (user == null) {
       Get.offAllNamed(Routes.signInScreen);
     } else {
-      Get.offAllNamed(Routes.mainScreen);
+      await userRepository.setUid(user.uid);
+      if (await userRepository.isRequireAdditionalInfo(user.uid)) {
+        Get.toNamed(Routes.additionalInfoScreen);
+      } else {
+        Get.offAllNamed(Routes.mainScreen);
+      }
     }
   }
 
@@ -36,15 +41,7 @@ class AuthRepository extends GetxController {
       await _auth.createUserWithEmailAndPassword(email: email, password: password);
       final fbUser = firebaseUser.value;
       if(fbUser != null) {
-        await ref.child(fbUser.uid).set({
-          'uid': fbUser.uid,
-          'email': fbUser.email,
-          'alias': alias,
-        });
-
-        Get.offAllNamed(Routes.mainScreen);
-      } else {
-        Get.offAllNamed(Routes.signInScreen);
+        await userRepository.putUserInfoInit(fbUser.uid, email, alias);
       }
     } on FirebaseAuthException catch (e) {
       final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
@@ -75,11 +72,7 @@ class AuthRepository extends GetxController {
     try {
       final signInCredential = await _auth.signInWithCredential(credential);
       final fbUser = signInCredential.user!;
-      await ref.child(fbUser.uid).set({
-        'uid': fbUser.uid,
-        'email': fbUser.email,
-        'alias': fbUser.displayName,
-      });
+      await userRepository.putUserInfoInit(fbUser.uid, fbUser.email, fbUser.displayName);
     } on FirebaseAuthException catch (e) {
       final ex = SignInWithCredential.code(e.code);
       return ex.message;
