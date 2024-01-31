@@ -7,13 +7,16 @@ import 'package:petke/layout/petkeAppBar.dart';
 import 'package:petke/pages/AdditionalInfo/EditPetsList.dart';
 import 'package:petke/pages/AdditionalInfo/EditProfileImage.dart';
 import 'package:petke/pages/AdditionalInfo/EditUserLocation.dart';
-import 'package:petke/themes/petke_theme_data.dart';
+
+import '../../controllers/image_picker_controller.dart';
 
 class AdditionalInfo extends StatelessWidget {
-  const AdditionalInfo({super.key});
+  AdditionalInfo({super.key});
+
+  ImagePickerController imagePickerController = Get.put(ImagePickerController());
 
   static List<Widget> pages = <Widget>[
-    const EditProfileImage(),
+    EditProfileImage(),
     const EditUserLocation(),
     const EditPetsList(),
   ];

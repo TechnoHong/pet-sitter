@@ -44,6 +44,6 @@ final getPages = [
   ),
   GetPage(
     name: Routes.additionalInfoScreen,
-    page: () => const AdditionalInfo(),
+    page: () => AdditionalInfo(),
   )
 ];
