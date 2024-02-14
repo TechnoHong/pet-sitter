@@ -4,9 +4,7 @@ import 'package:get/get.dart';
 import 'package:petke/controllers/nav_bar_controller.dart';
 import 'package:petke/repositories/auth_repository.dart';
 import 'package:petke/repositories/user_repository.dart';
-
 import '../routes.dart';
-
 
 class ProductModel {
   const ProductModel(this.imageUrl, this.title, this.desc1, this.desc2);
@@ -60,13 +58,13 @@ class HomePage extends StatelessWidget {
                 itemBuilder:(context, i) {
                   return Container(
                     color: Colors.blue,
-                    // margin: EdgeInsets.only(top: 5),
-                    width: 400,
+                    margin: EdgeInsets.only(top:2, left:3,right: 3, bottom: 1),
+                    width: 100,
                     height: 100,
 
                     child: Row(
                       children: [
-                        Image.network("/assets/images/logo.png", width: 90,),
+                        Image.network("/assets/images/logo.png", width: 90, height: 100,),
                         Expanded(
                             child: Container(
                               color: Colors.green,
