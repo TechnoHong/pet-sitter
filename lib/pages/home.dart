@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:petke/controllers/nav_bar_controller.dart';
 import 'package:petke/repositories/auth_repository.dart';
+import 'package:petke/models/Board.dart';
 import 'package:petke/repositories/user_repository.dart';
 import '../routes.dart';
 
@@ -29,18 +30,40 @@ const productList = [
       "내이름은 고양이", "2마리", "시간"),
 ];
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
-  writeBtnClick(){
+  @override
+  State<StatefulWidget> createState() => _HomeState();
+
+  logOutIconClick() {
+    AuthRepository.instance.signOut();
+  }
+}
+
+class _HomeState extends State<HomePage>{
+  writeBtnClick() {
     Get.toNamed(Routes.initial);
+  }
+
+  settingIconClick() {
+    Get.toNamed(Routes.settingsScreen);
   }
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     Get.put(NavBarController());
 
     return Scaffold(
+      // appBar: AppBar(
+      //   title: Text('123'),
+      //   actions: [
+      //     IconButton(onPressed: settingIconClick, icon: Icon(Icons.settings, size: 20,)),
+      //     IconButton(onPressed: logOutIconClick, icon: Icon(Icons.logout, size: 20)),
+      //     // child: Text(UserRepository.instance.userProfile?.extraFlag.toString() ?? 'null')),
+      //   ],
+      // ),
       floatingActionButton: FloatingActionButton.small(
         onPressed: writeBtnClick,
         child: Icon(Icons.edit),
@@ -61,7 +84,6 @@ class HomePage extends StatelessWidget {
                     margin: EdgeInsets.only(top:2, left:3,right: 3, bottom: 1),
                     width: 100,
                     height: 100,
-
                     child: Row(
                       children: [
                         Image.network("/assets/images/logo.png", width: 90, height: 100,),
